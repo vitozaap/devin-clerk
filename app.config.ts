@@ -4,22 +4,36 @@ export type Feature = {
 };
 
 export const appConfig = {
-  name: "Your App",
-  description: "Describe your app in one sentence. Devin will fill this in.",
-  emoji: "🚀",
-  accent: "#7c3aed",
+  name: "Limiar",
+  description:
+    "Generates practice exam tests for the most famous big techs' certificates. AWS, GCP, Azure and more.",
+  emoji: "🎯",
+  accent: "#f59e0b",
   upcomingFeatures: [
     {
-      title: "Your first feature",
-      description: "What people will be able to do once it's built.",
+      title: "Certification catalog",
+      description:
+        "Browse AWS, GCP and Azure certifications and pick the one you're studying for.",
     },
     {
-      title: "Your second feature",
-      description: "Devin will write this list based on your app idea.",
+      title: "Generate practice exam",
+      description:
+        "Create a timed multiple-choice mock exam for your chosen certification.",
     },
     {
-      title: "Your third feature",
-      description: "Each one is a good next prompt for Devin.",
+      title: "Instant scoring & review",
+      description:
+        "See your score with per-question explanations right after submitting.",
+    },
+    {
+      title: "Domain weak-spot report",
+      description:
+        "Get a breakdown by exam domain showing where to focus next.",
+    },
+    {
+      title: "Progress tracking",
+      description:
+        "Track scores over time and see when you're ready to sit the real exam.",
     },
   ] satisfies Feature[],
 };

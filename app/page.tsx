@@ -9,16 +9,25 @@ export default function Home() {
       </span>
       <h1 className="text-5xl font-bold tracking-tight">{appConfig.name}</h1>
       <p className="max-w-xl text-lg text-black/70">{appConfig.description}</p>
+      <p className="text-sm font-medium text-black/60">
+        Practice before test day.
+      </p>
+      <div className="flex flex-wrap justify-center gap-2">
+        {["AWS", "GCP", "Azure"].map((certification) => (
+          <span
+            key={certification}
+            className="rounded-full border border-black/10 px-3 py-1 text-sm text-black/70"
+          >
+            {certification}
+          </span>
+        ))}
+      </div>
       <Link
         href="/dashboard"
         className="rounded-full bg-accent px-6 py-3 font-medium text-white shadow-sm transition hover:opacity-90"
       >
-        Get early access →
+        Explore the dashboard →
       </Link>
-      <p className="text-sm text-black/50">
-        This page is public. The early-access page should be for signed-in users
-        only.
-      </p>
     </section>
   );
 }
