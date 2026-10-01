@@ -16,6 +16,9 @@ export function Header() {
           <Link href="/certifications" className="hover:text-primary">
             Certifications
           </Link>
+          <Link href="/exam" className="hover:text-primary">
+            Practice exam
+          </Link>
           <Link href="/dashboard" className="hover:text-primary">
             Dashboard
           </Link>

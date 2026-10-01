@@ -31,19 +31,27 @@ export default async function DashboardPage() {
           Here&apos;s what we&apos;re building next:
         </p>
         {selectedCertification ? (
-          <p className="text-sm text-muted-foreground">
-            Studying for:{" "}
-            <strong className="text-foreground">
-              {selectedCertification.name}
-            </strong>{" "}
-            ·{" "}
+          <>
+            <p className="text-sm text-muted-foreground">
+              Studying for:{" "}
+              <strong className="text-foreground">
+                {selectedCertification.name}
+              </strong>{" "}
+              ·{" "}
+              <Link
+                href="/certifications"
+                className="text-primary underline-offset-4 hover:underline"
+              >
+                Change
+              </Link>
+            </p>
             <Link
-              href="/certifications"
-              className="text-primary underline-offset-4 hover:underline"
+              href="/exam"
+              className={`${buttonVariants({ size: "sm" })} w-fit`}
             >
-              Change
+              Start a practice exam →
             </Link>
-          </p>
+          </>
         ) : (
           <Link
             href="/certifications"
