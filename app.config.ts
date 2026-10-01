@@ -11,11 +11,6 @@ export const appConfig = {
   accent: "#f59e0b",
   upcomingFeatures: [
     {
-      title: "Generate practice exam",
-      description:
-        "Create a timed multiple-choice mock exam for your chosen certification.",
-    },
-    {
       title: "Instant scoring & review",
       description:
         "See your score with per-question explanations right after submitting.",
