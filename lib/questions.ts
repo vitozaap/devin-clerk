@@ -249,16 +249,16 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
     {
       domain: "Design High-Performing Architectures",
       prompt:
-        "Users around the world repeatedly download the same large static files. Which service can reduce latency and origin traffic?",
+        "A read-heavy RDS workload receives the same query requests repeatedly. The team wants to reduce database load and read latency. Which solution is most appropriate?",
       options: [
-        "AWS CloudTrail",
-        "Amazon SQS",
-        "Amazon CloudFront",
-        "AWS Config",
+        "Move the database instance to a public subnet",
+        "Add an Amazon ElastiCache cache in front of the database",
+        "Increase the database storage size",
+        "Enable Multi-AZ deployment",
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation:
-        "CloudFront caches content near viewers and serves repeated requests without fetching every copy from the origin.",
+        "Amazon ElastiCache can keep frequently requested results in memory, reducing repeated database reads and lowering latency.",
     },
     {
       domain: "Design High-Performing Architectures",
@@ -598,7 +598,7 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
         "On-demand access to scalable services",
         "Manual replacement of local disks",
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
         "On-demand cloud services let an organization experiment and scale without first buying fixed infrastructure.",
     },
@@ -740,7 +740,7 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
         "Enable the Compute Engine API for the project",
         "Make the project public",
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
         "The Compute Engine API must be enabled in the project before its resources can be managed through that service.",
     },
@@ -879,12 +879,12 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
       options: [
         "A fixed fleet of Compute Engine VMs",
         "A self-managed Kubernetes control plane",
-        "Cloud Run with an appropriate minimum-instance setting",
+        "Cloud Run with minimum instances set to zero",
         "A single on-premises server",
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
-        "Cloud Run manages container serving and can scale to zero unless minimum instances are configured.",
+        "Cloud Run can scale to zero when minimum instances are set to zero, while Google manages the container-serving infrastructure.",
     },
     {
       domain: "Designing and planning a cloud solution",
@@ -1024,7 +1024,7 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
         "Dataflow",
         "Cloud Armor",
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
         "Dataflow supports streaming pipelines with event-time windows and handling for late-arriving data.",
     },
@@ -1166,7 +1166,7 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
         "Elasticity",
         "A local-only network",
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
         "Elasticity lets resources expand or contract as workload demand changes.",
     },
@@ -1308,9 +1308,9 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
         "The Virtual Machine Contributor role at that resource group",
         "A public access key",
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
-        "Assigning a suitable role at the resource-group scope limits permissions to the required resources.",
+        "The Virtual Machine Contributor role permits VM management, and assigning it at the resource-group scope limits its reach.",
     },
     {
       domain: "Manage Azure identities and governance",
@@ -1450,7 +1450,7 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
         "Deployment slots",
         "A virtual network peering",
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
         "App Service deployment slots let a team validate a staged version and swap it into production.",
     },
@@ -1592,9 +1592,9 @@ const questionSeeds: Record<string, QuestionSeed[]> = {
         "Use Azure Policy initiatives assigned at a management-group scope",
         "Put all resources in one untagged resource group",
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
-        "Management-group policy assignments can apply reusable governance controls consistently across subscriptions.",
+        "A policy initiative assigned at management-group scope can consistently enforce governance requirements across descendant subscriptions.",
     },
     {
       domain: "Design identity, governance, and monitoring solutions",
