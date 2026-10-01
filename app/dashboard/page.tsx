@@ -1,7 +1,10 @@
 import { appConfig } from "@/app.config";
 import { FeatureCard } from "@/components/FeatureCard";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { currentUser } from "@clerk/nextjs/server";
+import Link from "next/link";
+import { getCertification } from "@/lib/certifications";
 
 export default async function DashboardPage() {
   const user = await currentUser();
@@ -9,6 +12,11 @@ export default async function DashboardPage() {
     user?.primaryEmailAddress?.emailAddress ??
     user?.emailAddresses[0]?.emailAddress;
   const name = user?.firstName || email?.split("@")[0] || "there";
+  const selectedId =
+    typeof user?.publicMetadata.certificationId === "string"
+      ? user.publicMetadata.certificationId
+      : undefined;
+  const selectedCertification = getCertification(selectedId);
   const [nextFeature] = appConfig.upcomingFeatures;
 
   return (
@@ -22,6 +30,28 @@ export default async function DashboardPage() {
           {appConfig.name} is coming soon. You&apos;re on the early-access list.
           Here&apos;s what we&apos;re building next:
         </p>
+        {selectedCertification ? (
+          <p className="text-sm text-muted-foreground">
+            Studying for:{" "}
+            <strong className="text-foreground">
+              {selectedCertification.name}
+            </strong>{" "}
+            ·{" "}
+            <Link
+              href="/certifications"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              Change
+            </Link>
+          </p>
+        ) : (
+          <Link
+            href="/certifications"
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
+            Pick a certification →
+          </Link>
+        )}
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {appConfig.upcomingFeatures.map((feature, index) => (

@@ -13,6 +13,9 @@ export function Header() {
           {appConfig.name}
         </Link>
         <nav className="flex items-center gap-6 text-sm">
+          <Link href="/certifications" className="hover:text-primary">
+            Certifications
+          </Link>
           <Link href="/dashboard" className="hover:text-primary">
             Dashboard
           </Link>

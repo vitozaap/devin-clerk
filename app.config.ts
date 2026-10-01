@@ -11,11 +11,6 @@ export const appConfig = {
   accent: "#f59e0b",
   upcomingFeatures: [
     {
-      title: "Certification catalog",
-      description:
-        "Browse AWS, GCP and Azure certifications and pick the one you're studying for.",
-    },
-    {
       title: "Generate practice exam",
       description:
         "Create a timed multiple-choice mock exam for your chosen certification.",
