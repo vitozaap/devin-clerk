@@ -56,7 +56,7 @@ export default async function CertificationsPage() {
         </TabsList>
         {certificationGroups.map((group) => (
           <TabsContent key={group.value} value={group.value} className="mt-6">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {group.items.map((certification) => (
                 <CertificationCard
                   key={certification.id}

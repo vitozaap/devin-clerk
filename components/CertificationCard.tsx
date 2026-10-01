@@ -20,7 +20,7 @@ export function CertificationCard({
 }) {
   return (
     <Card className={cn("h-full", selected && "ring-2 ring-primary")}>
-      <CardHeader className="gap-3">
+      <CardHeader className="flex-1 content-start gap-3">
         <div className="flex flex-wrap gap-2">
           <Badge variant="outline">{certification.provider}</Badge>
           <Badge
@@ -38,7 +38,7 @@ export function CertificationCard({
         )}
         <CardDescription>{certification.summary}</CardDescription>
       </CardHeader>
-      <CardFooter>
+      <CardFooter className="mt-auto">
         <form
           action={selectCertification.bind(null, certification.id)}
           className="w-full"
