@@ -1,4 +1,11 @@
 import type { Feature } from "@/app.config";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export function FeatureCard({
   feature,
@@ -8,12 +15,19 @@ export function FeatureCard({
   index: number;
 }) {
   return (
-    <article className="flex flex-col gap-3 rounded-2xl border border-black/10 bg-white p-5 shadow-sm">
-      <span className="w-fit rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
-        Coming soon · #{index + 1}
-      </span>
-      <h3 className="text-lg font-semibold">{feature.title}</h3>
-      <p className="text-sm text-black/70">{feature.description}</p>
-    </article>
+    <Card className="h-full">
+      <CardHeader className="gap-3">
+        <Badge
+          variant="outline"
+          className="border-primary/30 bg-primary/10 text-primary"
+        >
+          Coming soon · #{index + 1}
+        </Badge>
+        <CardTitle className="text-lg font-semibold">
+          {feature.title}
+        </CardTitle>
+        <CardDescription>{feature.description}</CardDescription>
+      </CardHeader>
+    </Card>
   );
 }
