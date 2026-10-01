@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { appConfig } from "@/app.config";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
   return (
@@ -11,18 +12,20 @@ export function Header() {
           {appConfig.name}
         </Link>
         <nav className="flex items-center gap-6 text-sm">
-          <Link href="/dashboard" className="hover:text-accent">
+          <Link href="/dashboard" className="hover:text-primary">
             Dashboard
           </Link>
           <Show when="signed-out">
             <div className="flex items-center gap-4">
               <SignInButton>
-                <button className="text-sm hover:text-accent">Sign in</button>
+                <Button variant="ghost" size="sm">
+                  Sign in
+                </Button>
               </SignInButton>
               <SignUpButton>
-                <button className="rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition hover:opacity-90">
+                <Button size="sm" className="rounded-full">
                   Sign up
-                </button>
+                </Button>
               </SignUpButton>
             </div>
           </Show>

@@ -26,7 +26,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      style={{ "--accent": appConfig.accent } as CSSProperties}
+      style={{
+        "--primary": appConfig.accent,
+        "--ring": appConfig.accent,
+      } as CSSProperties}
     >
       <body className="flex min-h-full flex-col">
         <ClerkProvider appearance={{ variables: { colorPrimary: appConfig.accent } }}>

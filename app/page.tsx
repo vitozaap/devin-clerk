@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { appConfig } from "@/app.config";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -14,17 +16,17 @@ export default function Home() {
       </p>
       <div className="flex flex-wrap justify-center gap-2">
         {["AWS", "GCP", "Azure"].map((certification) => (
-          <span
+          <Badge
             key={certification}
-            className="rounded-full border border-black/10 px-3 py-1 text-sm text-black/70"
+            variant="outline"
           >
             {certification}
-          </span>
+          </Badge>
         ))}
       </div>
       <Link
         href="/dashboard"
-        className="rounded-full bg-accent px-6 py-3 font-medium text-white shadow-sm transition hover:opacity-90"
+        className={buttonVariants({ size: "lg", className: "rounded-full" })}
       >
         Explore the dashboard →
       </Link>

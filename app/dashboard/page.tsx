@@ -1,5 +1,6 @@
 import { appConfig } from "@/app.config";
 import { FeatureCard } from "@/components/FeatureCard";
+import { Card, CardContent } from "@/components/ui/card";
 import { currentUser } from "@clerk/nextjs/server";
 
 export default async function DashboardPage() {
@@ -28,11 +29,13 @@ export default async function DashboardPage() {
         ))}
       </div>
       {nextFeature && (
-        <div className="rounded-2xl border border-dashed border-accent/40 bg-accent/5 px-5 py-4 text-sm">
-          <strong className="text-accent">Keep building:</strong> open Devin and
-          ask it to &ldquo;Build &lsquo;{nextFeature.title}&rsquo; from the
-          Coming soon page.&rdquo;
-        </div>
+        <Card className="rounded-2xl border border-dashed border-primary/40 bg-primary/5 p-4 shadow-none ring-0">
+          <CardContent className="p-0 text-sm">
+            <strong className="text-primary">Keep building:</strong> open Devin
+            and ask it to &ldquo;Build &lsquo;{nextFeature.title}&rsquo; from
+            the Coming soon page.&rdquo;
+          </CardContent>
+        </Card>
       )}
     </section>
   );
